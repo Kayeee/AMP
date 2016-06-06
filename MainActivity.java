@@ -13,7 +13,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 import java.util.ArrayList;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener{
+public class MainActivity extends AppCompatActivity implements View.OnClickListener, ListView.OnItemClickListener{
 
     //our list
     ArrayList<String> listItems = new ArrayList<String>();
@@ -31,35 +31,27 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
-
         //populate our list
 //        listItems.add("BMW");
 //        listItems.add("Lambo");
 //        listItems.add("Ferrari");
+        
+        listView = (ListView)findViewById(R.id.myListView); //"myListView" is whatever you named the ListView
 
         //Add "listItems" to the list view.
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_single_choice, listItems);
-        //MyCustomAdapter adapter = new MyCustomAdapter(MainActivity.this, R.layout.row, listItems);
-        listView = (ListView)findViewById(R.id.myListView); //"myListView" is whatever you named the ListView
         listView.setAdapter(adapter);
         listView.setChoiceMode(ListView.CHOICE_MODE_SINGLE);
-
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            public void onItemClick(AdapterView<?> myAdapter, View myView, int myItemInt, long mylng) {
-                String selectedFromList =(String) (listView.getItemAtPosition(myItemInt));
-                selectedIndex = myItemInt;
-                System.out.println(selectedIndex);
-
-            }
-        });
 
         myTextView = (TextView)findViewById(R.id.myTextView);
         addButton = (Button)findViewById(R.id.addButton);
         deleteButton = (Button)findViewById(R.id.deleteButton);
 
+        //TO KEVIN: MAKE SURE TO DO THESE BEFORE WRITING ON CLICK METHOD
         addButton.setOnClickListener(this);
         deleteButton.setOnClickListener(this);
+        
+        listView.setOnItemClickListener(this)
     }
 
     public void onClick(View v) {
@@ -73,5 +65,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             System.out.println(listItems.remove(selectedIndex));
             ( (BaseAdapter)listView.getAdapter()).notifyDataSetChanged();
         }
+    }
+    
+    public void onItemClick(AdapterView<?> myAdapter, View myView, int myItemInt, long mylng){
+        selectedIndex = myItemInt
     }
 }
