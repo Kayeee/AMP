@@ -79,6 +79,20 @@ public class Main {
         
         //TODO: write a loop that prints each character of a string;
         
+        //ArrayLists
+        //Arrays are basiclly lists of many different values.
+        ArrayList aListVar = new ArrayList();
+        //You can add, remove, get, and find the size of array lists.
+        aListVar.add(1);
+        aListVar.add(5);
+        aListVar.add(9);
+        System.out.println(aListVar) //should look like [1, 5, 9]
+        
+        aListVar.size() //Should be 3
+        aListVar.get(1) //Will get the value 5 because it is at the 1st index (remember we start counting at 0!)
+        aListVar.remove(1)//Will remove the value 5. Now aListVar should look like: [1, 9]
+        
+        
     }
     
     public static int add(int first, int second){
