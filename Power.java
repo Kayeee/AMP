@@ -6,8 +6,8 @@ import java.util.Arrays;
 public class Main {
 
     static ArrayList<Double> test = new ArrayList<Double>();
-    static ArrayList<Double> positions = new ArrayList<Double>(Arrays.asList(0.0, 1.0, 2.0, 4.0, 8.0, 16.0, 32.0, 64.0, 128.0, 512.0, 1024.0));
-    static ArrayList<Double> timeStamps = new ArrayList<Double>(Arrays.asList(0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0));
+    static ArrayList<Double> positions = new ArrayList<Double>(Arrays.asList(0.0, 1.0, 2.0, 4.0, 8.0, 16.0, 32.0));
+    static ArrayList<Double> timeStamps = new ArrayList<Double>(Arrays.asList(0.0, 1.0, 2.0, 3.0, 4.0, 5.0, 6.0));
     static ArrayList<Double> instantVelocities = new ArrayList<Double>(); //will contain the instant velocity for time between 0.1 and 0.9
     static double mass = 1.0; //lets assume kg for right now.
 
