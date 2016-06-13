@@ -1,5 +1,7 @@
 package com.company; //You can ignore this. Your IDE (Eclipse) might not require it.
 
+import java.util.ArrayList;
+
 public class Main {
     
     public static void main(String[] args) {
@@ -79,7 +81,7 @@ public class Main {
         
         //TODO: write a loop that prints each character of a string;
         
-        //ArrayLists
+        //ArrayLists (don't forget to say 'import java.util.ArrayList' at the top of the file
         //Arrays are basiclly lists of many different values.
         ArrayList aListVar = new ArrayList();
         //You can add, remove, get, and find the size of array lists.
