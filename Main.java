@@ -18,7 +18,7 @@ public class Main {
         double f = 3.1;
         
         //Lets do some Math!
-        int c = a+b; //Addition: c is 5
+        int c = a+b; //Additon: c is 5
         int d = a*b; //Multiply: d is 6
         
         double g = e-f; //Subtract: g is 2.4
